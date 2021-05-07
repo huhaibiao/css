@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS变量</title>
+    <style>
+        .box1,.box2{
+            margin-top: 20px;
+            height: 100px;
+            width:calc(50% + 2em);
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h3>使用calc()给元素的border、margin、pading、font-size和width等属性设置动态值</h3>
+    <p>使用“+”、“-”、“*” 和 “/”四则运算；
+        可以使用百分比、px、em、rem等单位；
+        可以混合使用各种单位进行计算；
+        表达式中有“+”和“-”时，其前后必须要有空格，如”widht: calc(12%+5em)”这种没有空格的写法是错误的；
+        表达式中有“*”和“/”时，其前后可以没有空格，但建议留有空格。</p>
+    <div class="box1" id="box1"></div>
+    <div class="box2"></div>
+
+    <script>
+        let box1 = document.getElementById('box1')
+        console.log(box1);
+        // console.log(box1.style);
+        box1.style.width = 'calc(80% + 20px)';
+        let box2 = document.querySelector(".box2");
+        box2.style.width = 'calc(80%)';
+
+
+    </script>
+</body>
+</html>
