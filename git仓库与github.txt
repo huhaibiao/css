@@ -1,7 +1,7 @@
 1：建立本地仓库
 	git inite  //初始化该文件为git仓库
 	git add . //添加所用文件到本地暂存区
-	git commite -m '提交说明' //提交到本地仓库
+	git commit -m '提交说明' //提交到本地仓库
 2：与远程仓库关联
 	git pull 远程地址
 	拿到远程仓库access token //与远程关联
