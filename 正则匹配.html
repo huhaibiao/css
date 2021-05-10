@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s = "mississippi";
+        let p = "mis*is*p*.";
+        // console.log(pi);
+        let isMatch = function(s, p){
+            let pi = p.lastIndexOf('*');
+            if(pi ==-1){
+                //没有*配符时
+                if (p.length != s.length) {
+                    return false;
+                } else {
+                    let pPointPos = P.indexOf('.');
+                    let arrP = P.split('');
+                    while (pPointPos > -1) {
+                        arrP[pPointPos] = S[pPointPos];
+                        pPointPos = P.indexOf('.', pPointPos+1);
+                    }
+                    let newP = arrP.join('');
+                    if (newP == lastS) {
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }
+            }else{
+                let lastP = p.substr(pi+1);
+                if(lastP ==''){
+                    return 1;
+                }
+                //在没有*的情况下进行匹配，有没有**的情况
+                let si = s.lastIndexOf(p[pi-1]);
+                let lastS = s.substr(si+1);
+                console.log(lastP,lastS);
+                if(lastS.length != lastP.length){
+                    console.log(false+'1');
+                    return false;
+                }else{
+                    let pPointPos = lastP.indexOf('.');
+                    let arrLastP = lastP.split('');
+                    while (pPointPos > -1) {
+                        arrLastP[pPointPos] = lastS[pPointPos];
+                        pPointPos = lastP.indexOf('.', pPointPos+1);
+                    }
+                    let newP = arrLastP.join('');
+                    if (newP == lastS) {
+                        return 2;
+                    }else{
+                        return false;
+                    }
+                }
+            }
+        }
+        console.log(isMatch(s,p));
+    </script>
+</body>
+</html>
