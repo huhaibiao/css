@@ -2,4 +2,7 @@
 	Chrome提供了快速定位文件的快捷键cmd+P（windows上是Ctrl+P）
 2、页面源码搜索：
 	在页面上直接查找某个元素时，可以直接去Elements控制面板下，按cmd+F快捷键（windows下是Ctrl+F），这样的查找同样适用于Source下的js或者css文件
-	
+3、如果你想要查找的是特定字符串出现的所有源文件，可以使用cmd+option+F快捷键（windows下是Ctrl+Shift+F）。
+
+下面的例子是搜索所有出现“container”的地方，js和html文件中只要匹配到都会出现在结果中。
+https://www.jianshu.com/p/c78f8e51ccc0
