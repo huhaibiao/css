@@ -1,0 +1,5 @@
+1、快速切换文件：
+	Chrome提供了快速定位文件的快捷键cmd+P（windows上是Ctrl+P）
+2、页面源码搜索：
+	在页面上直接查找某个元素时，可以直接去Elements控制面板下，按cmd+F快捷键（windows下是Ctrl+F），这样的查找同样适用于Source下的js或者css文件
+	
