@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let encoded = [12,6,11,10,5,3,4,6];
+        // let perm = new Array(encoded.length+1);
+        // // perm[4]=3;
+        // console.log(encoded,perm);
+        // let a = 6^125;
+        // console.log(a);
+        // let status = true;
+        // let i = 1;
+        // perm[0]=1;
+        // function decode() {
+        //     for(let i =1 ;i < encoded.length+1 ;i++){
+        //         perm[i] = perm[i-1]^encoded[i-1];
+        //         if (perm[i]==0) {
+        //             perm[0]++;
+        //             decode(perm[0]);
+        //             break;
+        //         }
+        //     }
+        // }
+        // decode(perm[0]);
+        // console.log(perm);
+        var decode = function(encoded) {
+            let leng = encoded.length+1;
+            let n=leng;
+            console.log(leng);
+            let perm = new Array(n);
+            let totle =0,etotle=0;
+            while (leng) {
+                console.log(leng);
+                totle^=leng;
+                leng--;
+            }
+            console.log(totle);
+            while (n>0) {
+                etotle^=encoded[n-2];
+                n-=2;
+            }
+            perm[0]=etotle^totle;
+            let i =0;
+            while(i < encoded.length){
+                i+=1;
+                perm[i]=perm[i-1]^encoded[i-1];
+            }
+            return perm;
+            // perm[0]=1;
+            // function decode1() {
+            //             for(let i =1 ;i < encoded.length+1 ;i++){
+            //                 perm[i] = perm[i-1]^encoded[i-1];
+            //                 if (perm[i]==0||perm[i]>leng) {
+            //                     perm[0]++;
+            //                     decode1(perm[0]);
+            //                     break;
+            //                 }
+            //             }
+            //             console.log(perm); 
+            // }
+            // return decode1();
+};
+decode([12,6,11,10,5,3,4,6])
+// console.log(decode);
+    </script>
+</body>
+</html>
